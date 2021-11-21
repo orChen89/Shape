@@ -1,39 +1,28 @@
 public class Circle extends Shape {
 
-    private float radius;
-    private static float pai = 3.14f;
+    private float diameter;
+    final float pai = 3.14f;
 
-    public Circle(float radius, float pai, float length, float height, float area, float perimeter) {
-        super(radius, pai, length, height, area, perimeter);
-        this.radius = radius;
-        this.pai = pai;
-    }
-
-    public float circlePerimeter(float perimeter){
-
-        perimeter = 2 * radius * pai;
-        return perimeter;
-    }
-
-    public float circleArea(float area){
-        area = (radius*radius) * pai;
-        return area;
-    }
-
+    public Circle(float diameter) {
+        this.diameter = diameter;
+        }
 
     @Override
-    public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", pai=" + pai +
-                ", area=" + area +
-                ", perimeter=" + perimeter +
-                '}';
+    public void getPerimeter() {
+
+        float perimeter;
+        float radius = diameter / 2;
+        perimeter = 2 * (radius) * pai;
+        System.out.println("This circle perimeter is: " + perimeter);
     }
 
-    public void print (String s){
+    @Override
+    public void getArea() {
 
-        System.out.println("This circle perimeter is: " + circlePerimeter(perimeter));
-        System.out.println("This circle area is: " + circleArea(area));
+        float area;
+        float radius = diameter / 2;
+        area = (radius*radius) * pai;
+        System.out.println("This circle area is: " + area);
     }
 }
+
