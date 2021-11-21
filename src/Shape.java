@@ -1,15 +1,37 @@
-import org.w3c.dom.ls.LSOutput;
 
 public abstract class Shape {
 
+    protected float length;
+    protected float height;
     protected float area;
     protected float perimeter;
 
 
-    public Shape(float area, float perimeter) {
+    public Shape(float length, float height ,float area, float perimeter) {
 
+        this.length = length;
+        this.height = height;
         this.area = area;
         this.perimeter = perimeter;
+    }
+
+    public Shape(float radius, float pai, float length, float height, float area, float perimeter) {
+    }
+
+    public float getLength() {
+        return length;
+    }
+
+    public void setLength(float length) {
+        this.length = length;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
     }
 
     public float getArea() {
@@ -28,13 +50,6 @@ public abstract class Shape {
         this.perimeter = perimeter;
     }
 
-    @Override
-    public String toString() {
-        return "Shape{" +
-                "area=" + area +
-                ", perimeter=" + perimeter +
-                '}';
-    }
 
     public abstract void print(String s);
 
